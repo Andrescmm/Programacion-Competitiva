@@ -2,7 +2,7 @@
 
 using namespace std;
 
-
+//a*l+b
 int maxCostDele(){
 
   int n,a,b;
@@ -14,10 +14,18 @@ int maxCostDele(){
   if (b>=0){
      return(a*n+b*n);
   }
-  
+  else{
+    int t = 0;
+     for(int i = 1; i<n ; i++){
+       if(s[i] != s[i-1]){
+         t++;
+       }
+     }
+     t++;
 
-
-
+    return a*n+((t/2)+1)*b;
+  }
+  return 0;
 }
 
 
