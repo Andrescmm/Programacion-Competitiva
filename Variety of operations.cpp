@@ -29,7 +29,6 @@ int main(){
 	while (tc--) {
 		cout<<operations()<<endl;
 	}
-
    
  return 0;
 }
