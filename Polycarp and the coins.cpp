@@ -17,7 +17,7 @@ void polyCoins(){
       c2++;
   }
 
-   cout<<c1<<" , "<<c2<<endl;
+   cout<<c1<<" "<<c2<<endl;
    //cout<<"1 burle = "<<c1<<" , "<<"2 burles = "<<c2<<endl;
 }
 
