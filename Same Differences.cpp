@@ -18,7 +18,7 @@ int same(){
     total += a[x];
     a[x]++;
   }
- map<int, int>::iterator itr;
+    map<int, int>::iterator itr;
     cout << "\nThe map       ";
     cout << "\tKEY\tELEMENT\n";
     for (itr = a.begin(); itr != a.end(); ++itr) {
