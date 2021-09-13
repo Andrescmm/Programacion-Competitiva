@@ -72,8 +72,8 @@ signed main(){
 	cin >> tc;
 	while (tc--) {
          
-        cout<<strangeFunction()<<endl;
-        //cout<<sFunction()<<endl;
+        //cout<<strangeFunction()<<endl;
+        cout<<sFunction()<<endl;
 	}
 
 }
