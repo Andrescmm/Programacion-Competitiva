@@ -39,7 +39,7 @@ int strangeFunction(){
           res += f(i);
     }
     
-    cout<<"ans = ";
+    //cout<<"ans = ";
     return res % modulo;
 }
 
@@ -53,17 +53,17 @@ int sFunction(){
         int ans = 0;
  
         for (int i = 2; ; i++) {
-            int bef = n / lcm;
+            int b = n / lcm;
             lcm = lcm * i / gcd(lcm, i);
-            int aft = n / lcm;
+            int a = n / lcm;
  
-            ans += (bef - aft) * i;
+            ans += (b - a) * i;
             ans %= modulo;
  
             if (lcm > n) break;
         }
 
-     cout<<"ans = ";
+     //cout<<"ans = ";
      return ans;
 }
   
@@ -72,8 +72,8 @@ signed main(){
 	cin >> tc;
 	while (tc--) {
          
-        cout<<strangeFunction()<<endl;
-        //cout<<sFunction()<<endl;
+        //cout<<strangeFunction()<<endl;
+        cout<<sFunction()<<endl;
 	}
 
 }
