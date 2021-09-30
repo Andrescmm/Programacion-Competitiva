@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-#define int long long
-const int b = 1e100 +10;
+//#define int long long
+//const int b = 1e100 +10;
 
 int main() {
 
