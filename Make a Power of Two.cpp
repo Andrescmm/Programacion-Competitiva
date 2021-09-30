@@ -1,22 +1,24 @@
-#include<iostream>
-
+#include <iostream>
+#include <vector>
 using namespace std;
+#define int long long
+const int b = 1e100 +10;
 
- int powerOfTwo(){
-     int n;
-     cin>>n;
+int main() {
 
- if( !(n & (n-1)) ){
-     cout<<"is power of two"<<endl;
-   }
+  int N;
+  cin>>N;
 
-   return 0;
- }
+  vector<int>nums;
+  
+  //for(int i = 0;i<N; i++){
+    int tmp;
+    cin>>tmp;
+    nums[1]=tmp;
+  //}
+ //for (int i = 0; i < nums.size(); i++)
+        //cout << nums[i] << " ";
 
-
-int main(){
-    
-    cout<<powerOfTwo()<<endl;
-
-    return 0;
+  //for(int i = 0; i<N)
+ return 0;
 }
