@@ -1,37 +1,52 @@
-/**
- * Description: Dijkstra (Find shortest path from single source)
- * Usage: dijkstra O((V + E) lg(V))
- * Source: https://github.com/dragonslayerx
- */
-const int MAX = 100050;
-const int INF = 1e9;
-
-void dijkstra(vector< vector< pair<int,int> > > &G, int vertexCount, int src, int dist[]){
-    priority_queue<pair<int, int>, vector<pair<int, int> >, greater<pair<int, int> > > pq;
-    bool isvisited[MAX];
-
-    for (int i = 0; i < vertexCount; i++) {
-        dist[i] = INF;
-        isvisited[i] = false;
-    }
-
-    dist[src] = 0;
-    pq.push(make_pair(0, src));
-    while (!pq.empty()){
-        pair<int, int> tp = pq.top();
-        pq.pop();
-        int node = tp.second;
-        int d = tp.first;
-        if (!isvisited[node]) {
-            isvisited[node] = true;
-            for (int i = 0; i < G[node].size(); i++) {
-                int v = G[node][i].first;
-                int w = G[node][i].second;
-                if (dist[v] > d + w) {
-                    dist[v] = d + w;
-                    pq.push(make_pair(dist[v], v));
+#include<iostream>
+#include<vector>
+#include<queue>
+#include <bits/stdc++.h>
+    using namespace std;
+     
+    typedef vector<int> vi;
+    typedef pair<int,int> pii;
+    typedef vector< pii > vii;
+    #define INF 0x3f3f3f3f
+     
+    vii *G;   // Graph
+    vi Dist;  // for storing the distance of every other node from source.
+    /*==========================================*/
+    void Dijkstra(int source, int N) {
+        priority_queue<pii, vector<pii>, greater<pii> > Q;   // min heap
+        Dist.assign(N,INF);
+        Dist[source] = 0;
+        Q.push({0,source});
+        while(!Q.empty()){
+            int u = Q.top().second;
+            Q.pop();
+            for(auto &c : G[u]){
+                int v = c.first;
+                int w = c.second;
+                if(Dist[v] > Dist[u]+w){
+                    Dist[v] = Dist[u]+w;
+                    Q.push({Dist[v],v});
                 }
             }
         }
     }
-}
+    /*===========================================*/
+    int main() {
+        int N, M, u, v, w, source;  // N-total no of nodes, M-no. of edges, 
+        cin >> N >> M;              // u,v and w are the end vertices and the weight associated with an edge
+        G = new vii[N+1];
+        
+        for(int i=0;i<M;++i){
+            cin >> u >> v >> w;
+            G[u].push_back({v,w});
+            G[v].push_back({u,w});
+        }
+        cin >> source;
+        Dijkstra(source,N);
+        
+        for(int i=0;i<N;i++)
+            cout<<Dist[i]<<" ";
+        cout<<endl;
+        
+        return 0;
+    }
