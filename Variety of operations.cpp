@@ -23,7 +23,7 @@ int operations(){
 
 int main(){
 
-
+  cout<<"Hello World!"<<endl;
 	int tc = 1;
 	cin >> tc;
 	while (tc--) {

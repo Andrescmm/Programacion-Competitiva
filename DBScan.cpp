@@ -21,6 +21,14 @@ void DBScan(vector<int>D,int eps, int minPoints, vector<int>P){
 
 void expandCluster(vector<int> P,vector<int>sphere_points, int C,int epsilon, int min_points){
   for(int i =0; i< sphere_points.size();i++){
+      if(P[i]!=0){
+          P[i] =1;
+          sphere_points=regionQuery(P,epsilon);
+          if(sphere_points.size()>= min_points){
+              sphere_points[i]==p;
+          }
+          if 
+      }
 
   } 
 }
